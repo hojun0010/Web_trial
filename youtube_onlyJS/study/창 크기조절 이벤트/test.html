@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="width: 100vw; height: 100vh; margin: 0px; display: flex; justify-content: center; align-content: center;">
+	<div id="only_div" style="width: 50px; height: 50px; background-color: red; margin: auto; ">
+        <span id="SpanID1"></span>
+        <span id="SpanID2"></span>
+    </div>
+	<script type="text/javascript">
+start();
+window.addEventListener('resize', start); //창 크기가 변화할때마다 start() 함수가 호출된다.
+//이는 확대와 축소에도 적용되며 확대의 경우 창크기가 작아진것으로 축소는 그 반대가 실행된것으로 인식된다.
+function start(){
+    //clientHeight, clientWidth는 어떠한 css도 가지지 않는 inline element와 element에 대해서는 0을 반환한다.
+    //그와 다른 element에 대해서는 픽셀들로 이루어진 element의 내부 width를 반환하면 이는 padding을 포함, borders
+    //margins, vertical scrollbars는 비포함한다.
+    //client...가 root element(html element)에 사용될때는 viewport's ...를 반환한다.
+    var height = document.documentElement.clientHeight;
+    var width = document.documentElement.clientWidth;
+
+   document.getElementById('SpanID1').innerText = document.documentElement.clientWidth;
+   document.getElementById('SpanID2').innerText = document.documentElement.clientHeight;
+    //clientWidth와 clientHeight를 화면상에 텍스트로 표기
+
+    var only_div = document.getElementById('only_div');
+    //왜 이 only_div는 null이 될까? 
+    //-> javascript는 window.onload 등과 같은 explicit evnet가 없다면 invoke 되지 않는다
+    //onload, onclick, onmouseover 등이 explicit event
+    //아마도 button 클릭 이벤트의 경우도 explicit event가 아닐것 같다.
+
+    //only_div.setAttribute('style','width : 50px; height : 50px; background-color : red; margin: auto');
+    //setAttribute는 현재 저장된 attr를 초기화하고 명시된 attr를 적용시킨다. -> 두번 정의하는 느낌? 다름 방법은 없을까?
+
+    //setAttribute없이도 적용이 된다? 이전에는 왜 안됐던거지..
+    //setAttribute를 없애니 onload 없이도 작동이 된다? 이건 무슨 오류인가..
+    only_div.style.width = width-300+'px';
+    only_div.style.width = height-300+'px';
+}
+	</script>
+</body>
+</html>

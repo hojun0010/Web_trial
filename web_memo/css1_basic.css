@@ -1,0 +1,61 @@
+/**/
+a{ /*선택자*/
+  background-color: yellow;
+  /*속성명 : 속성값*/
+  font-size: 16px;
+}
+/*클래스 선택자 .클래스명 / id 선택자 : #id명 / 그룹 선택자 : 요소1, 요소2, 요소3... (쉼표로 구분)*/
+
+b{
+  background-color: yellow;
+  background-image: url("/examples/images/img_background_good.png");   
+  /*html 요소의 배경 이미지 -> html 전체에 걸쳐 반복되어 나타난다.*/
+  background-repeat: repeat-x;  
+  /*repeat-x : 수평반복 repeat-y : 수직반복 no-repeat : 한번만 등장*/
+  background-position: top right;
+  /*반복되지 않는 배경 이미지의 상대 위치(relative position)을 설정
+  두 단어의 조합이 가능 (left, right, center) + (top, center, bottom)
+  또한 %나 px을 사용하여 상대 위치를 직접 명시도 가능 이때 상대위치 기준은 left top이 된다.*/
+  background-position: 100px 200px; /*요소 b에 대해서 왼쪽 끝에서부터 배경 이미지를 배치할때 위로 200px 왼쪽으로 100px 떨어지게 배치한다.*/
+  background-attachment: fixed; /*위치가 설정된 배경 이미지를 고정 -> 스크롤을 해도 화면상의 위치는 고정*/
+  /*모든 background 속성을 한줄로 표현 가능*/
+  background: #ffcccc url("/examples/images/img_background_good.png") no-repeat left bottom fixed;
+}
+ /*image sprite - 여러개의 이미지를 합쳐서 하나의 이미지로 합쳐서 관리하는 이미지
+  서버에 여러개의 이미지를 요청할경우 그 이미지들을 받기 위한 로딩시간이 필요
+  이를 해결하기 위해 받을 여러 이미지들을 하나로 합친후 이를 분리하는 형식으로 이미지를 처리한다.*/
+  .up, .down, .right, .left {
+    background: url("/examples/images/img_image_sprites.png") no-repeat;
+  }
+  .up {
+    width: 21px;
+    height: 20px;
+    background-position: 0 0;
+  }
+  .down {
+    width: 21px;
+    height: 20px;
+    background-position: -21px 0;
+  }
+  .right {
+    width: 22px;
+    height: 20px;
+    background-position: -42px 0;
+  }
+  .left {
+    width: 22px;
+    height: 20px;
+    background-position: -65px 0;
+  }
+div{
+  width: 200px; /*width,height 속성을 이용한 크기는 고정된다 -> 창의 크기가 변화할 경우 스크롤 바를 생성 즉 요소의 크기는 창의 크기와 상관없이 고정*/
+  max-width: 200px; /*최대 크기를 설정 창이 작아질수록 크기는 줄어들수있다.*/
+  min-width: 100px; /*위와 반대로 최소 크기를 설정 창의 크기가 일정 수준 작아졌을때 창은 스크롤바를 생성한다*/
+
+  padding: 50px; /*요소의 테두리와 내용 사이에 간격 생성 -> 요소의 안에 생성
+  ->background 속성에 영향을 받는다, top,right,left,bottom 4방향의 padding을 생성가능*/
+  
+  margin: 50px; /*요소의 테두리와 다른 요소의 테두리 사이에 간격 생성 -> 요소의 밖에 생성*/
+  /*html 요소의 height와 width 속성은 요소 내의 내용 부분만을 가리키며 이는 padding border margin은 포함되지 않는다*/
+}
+
