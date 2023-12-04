@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    overflow: hidden;
+  }
+  #document_body{
+    display: flex; /*본인을 flex -> 자식 태그를 옆으로 나열한다.*/
+    /* width: 100vw;
+    height: 80vh; */
+  }
+  
+  #scroll_sidebar{
+    background-color: rgb(160, 160, 218);
+    width: 10%;
+    height: 93vh;
+    overflow: auto; /*정해진 영역을 넘어가면 스크롤바 생성, 아니면 없음*/
+    text-align: center;
+  }
+  /*스크롤바 webkit은 webkit 브라우저에만 작동 (Chrome, Edge, Opera, Safari, iOS 브라우저)*/
+  #scroll_sidebar::-webkit-scrollbar{ /*스크롤바 전체*/
+    width: 4px;
+  }
+  #scroll_sidebar::-webkit-scrollbar-thumb{ /*스크롤바만*/
+    background: rgb(119, 116, 116);
+    border-radius: 25px;
+  }
+  #scroll_sidebar::-webkit-scrollbar-track{ /*스크롤바 배경*/
+    background-color: rgba(0,0,0,0);
+  }
+  #scroll_main{
+    background-color: rgb(158, 206, 158);
+    height: 100vh;
+    width: 100%;
+    overflow : auto; 
+  }
+  /*스크롤바 webkit은 webkit 브라우저에만 작동 (Chrome, Edge, Opera, Safari, iOS 브라우저)*/
+  #scroll_main::-webkit-scrollbar{ /*스크롤바 전체*/
+    width: 10px;
+  }
+  #scroll_main::-webkit-scrollbar-thumb{ /*스크롤바만*/
+    height: 10%;
+    background: rgb(119, 116, 116);
+    border-radius: 45px;
+  }
+  #scroll_main::-webkit-scrollbar-track{ /*스크롤바 배경*/
+    background-color: rgba(0,0,0,0);
+  }
+  .video_group{
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid gray;
+    display: grid;
+    grid-template-columns:200px 200px 200px;
+    grid-template-rows: minmax(100px,auto);
+    gap: 30px 30px;
+  }
+  .video{
+    background-color: rgb(60, 78, 78);  
+    border-radius: 15px;
+  }

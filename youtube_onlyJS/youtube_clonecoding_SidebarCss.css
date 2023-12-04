@@ -1,0 +1,9 @@
+#youtube_sidebar, #user_sidebar, #subscribe_sidebar, #youtube_setting{
+    margin: 3px 1px 3px 1px; /*margin : top right bottom left*/
+  }
+  #youtube_sidebar p{
+    font-size: 20px;
+  }
+  #user_sidebar, #subscribe_sidebar, #youtube_setting{
+    border-top: 1px solid rgb(29, 27, 27); /*border-(left/right/top/bottom/style): width,style,color*/
+  }

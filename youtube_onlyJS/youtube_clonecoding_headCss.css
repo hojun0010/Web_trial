@@ -1,0 +1,39 @@
+#document_head{
+    width: 100vw; /*view point : 현재 열려있는 페이지 크기의 몇퍼센트인가*/
+    height: 7vh;
+    background-color: rgb(202, 154, 154);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #head_main, #head_search, #head_account{
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  #head_main{
+    display: flex;
+    justify-content:flex-start;
+    margin-left: 20px;
+  }
+  #head_main>h1{
+    margin: auto;
+  }
+  #head_search{
+    width: 600px;
+    height: 28px;
+    margin: auto;
+  }
+  #head_search>form{
+    display: flex;
+    flex-direction: row;
+  }
+  #search{
+    width: 600px;
+    height: 28px;
+  }
+  #head_account{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
