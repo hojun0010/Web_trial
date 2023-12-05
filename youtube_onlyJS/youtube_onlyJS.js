@@ -4,6 +4,7 @@ yt_mark.onclick = function(){
 }
 
 let scroll_main = document.getElementById("scroll_main"); // 영상을 보여줄 영역을 갖고옴
+let video_group = document.getElementById("video_group");
 let videos = document.getElementsByClassName("video"); // 첫 화면 당시 비디오 크기를 설정하기 위함
 
 let scroll_main_width = scroll_main.getBoundingClientRect().width; //현재 scroll_main의 width
