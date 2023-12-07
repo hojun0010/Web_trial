@@ -37,6 +37,7 @@ main{
     float: inline-end;
     height: 85%;
     width: 85%;
+    text-align: center; /*가운데 정렬*/
 }
 #project_body{
     background-color: rgb(205, 181, 227);
@@ -48,11 +49,21 @@ ol{
     기본값은 outside -> li의 실제 내용이 li에의 영역의 시작부터 시작하다 즉 마커는 li의 영역을 벗어난다*/
     text-indent: 15px; /*들여쓰기 속성*/
 }
-
-#todoList_add{
-    width: 30px;
-    height: 30px;
-}
 #main_head{
+    padding: 15px;
+    text-align: center;
+    /*안의 요소만큼의 영역을 차지하도록 설정 : inline-block*/
+    display: inline-block;
+}
+.todoList_head_comp{
+    margin: 10px;
+}
+#main_head_middle{
+    /*중앙 정렬 -> 각 컴포넌트들은 동일한 크기의 영역을 점유한다.*/
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+.todolist_div > {
+    display: inline-block;
 }

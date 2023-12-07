@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" href="css.css">
+        <title>todoList</title>
+    </head>
+    <body>
+        <header id="head_menu">
+
+        </header>
+        <aside id="side_menu">
+
+        </aside>
+        <main id="main"> <!--block 태그는 기본적으로 언제나 새로울 라인에서 시작한다.-->
+            <div id="main_head">
+                <div id="main_head_middle">
+                    <input type="text" id="input_text" class="todoList_head_comp">
+                    <!-- <input type="button" id="todoList_add" class="todoList_head_comp" > -->
+                    <!--input type ="button" : <button>에 비해서 디자인에 대한 제약 -> css로의 디자인은 가능
+                        <button> : 텍스트뿐만 아니라 이미지 or gif 요소를 자식으로 포함할 수 있다. 
+                            submit 기능이 기본적으로 포함되어 있으며 원하지않을 경우 type="button"을 따로 추가해줘야한다-->
+                    <button type="button" id="todoList_add" class="todoList_head_comp">추가</button>
+                    <button type="button" id="todoList_del" class="todoList_head_comp">삭제</button>
+                </div>
+            </div>         
+            <div id="todolist">
+                <div class="todolist_div">
+                    <input type="checkbox" value="jlpt4" class="todolist_cb">
+                    <label class="todolist_label" for="jlpt4">jlpt4</label>
+                </div>
+                <div class="todolist_div">
+                    <input type="checkbox" value="jlpt5" class="todolist_cb">
+                    <label class="todolist_label" for="jlpt5">jlpt5</label>
+                </div>
+            </div>
+        </main>
+        <script src="todoList.js"></script>
+    </body>
+</html>
