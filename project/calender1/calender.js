@@ -1,30 +1,93 @@
 
 let calender = document.getElementById("calender");
-let month_mex_date = [31,29,31,30,30,31,31,31,30,30,31,31] //월별 마지막 날짜 설정
+let month_max_date = [31,29,31,30,31,30,31,31,30,31,30,31] //월별 마지막 날짜 설정
 let dayOfweek = ["sun","mon","tue","wen","thur","fri","sat"];
-let dayOfweekNums = [1,2,3,4,5,6,7];
+let dayOfweekNums = [0,1,2,3,4,5,6];
 
-let first_day = new Date("2024-01-01");
-let first_dayOfweek = "mon";
+//let today = new Date();
+let today = new Date();
+let todayOfweek = today.getDay(); //Date 객체의 요일정보를 가져옵니다(0~6)
 
-//페이지 온로드 시 first_day에 저장된 날짜를 wen로 하는 기준으로 1월 달력을 생성한다. 
-window.onload = function(){
-    //
-    for(let i = 1; i < month_mex_date[first_day.getMonth()]; i++){
-        if(first_dayOfweek != "sun"){
-            //월의 1일이 sunday가 아니면 해당월의 1일에 해당하는 요일 이전날부터 그 주의 sunday까지의 날짜를 이전 달의 달력으로 채워야한다.
-            //first_dayOfweek 의 요일의 위치(index)를 dayofweek에서 찾고
-            let dayofweeknum = dayOfweek.findIndex(first_dayOfweek);
-            //해당 인덱스보다 작은 인덱스에 위치한 요일들에 해당하는 div들을 생성하여 달력에 추가한다 24년 1월의 경우 23년 12월 31일 일요일이 필요
-            for(let j = dayofweeknum-1; j >= 0; j--){
-                
-            }
+function calenderCreate(){ //한달 달력 생성 스크립트 완성
+    //let beforeDateToTodayCalenderCnt = 1;
+    let todayMonthFirstDay = new Date(today.getFullYear(),today.getMonth(),1); //이번달의 첫번째 날짜 date
+    let beforeDateToTodayCalenderCnt = todayMonthFirstDay.getDay(); 
+    //이번달 달력에서 저번달 달력의 날짜가 차지하는 칸의 갯수 -> 이번달의 1일의 요일값
+    for(let i = 1; i < month_max_date[today.getMonth()-1]; i++){ 
+        // 첫번째 주 일요일부터 날짜를 가져와서 이번달 날짜까지 추가하는 반복문
+        let newDiv = document.createElement("div");     
+        let newTextDiv = document.createElement("div");
+        newTextDiv.setAttribute("class","text");
+        let newText = "";
+        if(beforeDateToTodayCalenderCnt !== 0){
+            newText = document.createTextNode(month_max_date[today.getMonth()-1]-beforeDateToTodayCalenderCnt+1); 
+            //저번달에서 가져올 날짜 값은 (저번달의 끝 날짜값 - 채워야할 칸 수 +1 ) ex) 31-1+1 = 31
+            newDiv.setAttribute("class","other date");
+            beforeDateToTodayCalenderCnt--;
+            i--;
         }
-        let newDiv = document.createElement("div");
-        let newText = document.createTextNode(i + "");
-        newDiv.setAttribute("class","date");
-        newDiv.appendChild(newText);
+        else{
+            newText = document.createTextNode(i + "");
+            newDiv.setAttribute("class","date");
+        }
+        newTextDiv.appendChild(newText);
+        newDiv.appendChild(newTextDiv);
         calender.appendChild(newDiv);
     }
+    let todayMonthFinalDay = new Date(today.getFullYear(), today.getMonth()+1, 0);
+    for(let i = 1; i <= 6-todayMonthFinalDay.getDay(); i++){
+        let newDiv = document.createElement("div");     
+        newDiv.setAttribute("class","other date");
+
+        let newTextDiv = document.createElement("div");
+        newTextDiv.setAttribute("class","text");
+
+        let newText = document.createTextNode(i);
+        newTextDiv.appendChild(newText);
+        newDiv.appendChild(newTextDiv);
+        calender.appendChild(newDiv);
+    }
+}
+function timeCreate(){
+    today = new Date();
+    let IsAM = true;
+    let hour = today.getHours();
+    if(hour > 12) {
+        IsAM = false;
+        hour -= 12;
+    }
+    let min = zeroNumber(today.getMinutes());
+    let sec = zeroNumber(today.getSeconds());
+
+    if(IsAM){
+        document.getElementById("time").innerHTML = "오전 " + hour + ":" + min + ":" + sec;
+    }else{
+        document.getElementById("time").innerHTML = "오후 " + hour + ":" + min + ":" + sec;
+    }
+}
+function zeroNumber(i){
+    if(i < 10){
+        return "0"+i;
+    }
+    else{
+        return i;
+    }
+}
+function dateCreate(){
+    today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth()+1;
+    let date = today.getDate();
+
+    document.getElementById("today").innerHTML = year+"년 "+month+"월 "+date+"일";
+}
+
+//페이지 온로드 시 today에 저장된 날짜를 wen로 하는 기준으로 1월 달력을 생성한다. 
+window.onload = function(){
+    timeCreate();
+    setInterval(timeCreate,1000);
+    dateCreate();
+
+    calenderCreate();
     
 }
