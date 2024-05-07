@@ -3,6 +3,7 @@
     padding: 0;
     text-align: center;
     color: white;
+    box-sizing: border-box;
 }
 #all_time, #calender{
     padding: 20px;
@@ -26,23 +27,14 @@
 }
 #calender{
     width: 400px;
-    height: 400px;
+    height: 330px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
     margin: 0 auto;
     background: rgb(38, 36, 45);
 }
-.text{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid blueviolet;
-    font-size: 30px;
-}
 .dayofweek, .date{
-    margin: 3px;
+    margin: 1px;
 }
 .dayofweek{
     display: inline-block;
@@ -54,9 +46,27 @@
 .date{
     display: inline-block;
     color: white;
+    border: 3px solid rgb(38, 36, 45);
 }
-.other{
+.today{
+    background-color: rgb(16, 16, 86);
+    border: 3px solid rgb(16, 16, 86);
+}
+.today .text{
+    border : 2px solid white;
+}
+.other .text{
     font-weight: lighter;
     color: rgb(88, 82, 82);
+}
+.text{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 2px;
+
 }
 
