@@ -1,0 +1,114 @@
+* { 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+/* #timeAndToday, #calender{ */
+#timeAndToday{
+    padding: 20px;
+}
+#timeAndToday{
+    width: 400px;
+    margin: 0 auto;
+    background: rgb(38, 36, 45);
+    border-bottom: 1px solid rgb(105, 105, 105);
+}
+#time, #today{
+    text-align: left;;
+}
+#time{
+    margin: 0 auto;
+    font-size: 50px;
+}
+#today{
+    margin: 0 auto;
+    color: cadetblue;
+}
+
+#calender{
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    margin: 0 auto;
+}
+#yearAndMonth{
+    width: 400px;
+    font-size: 15px;
+    background-color:  rgb(38, 36, 45);
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+}
+#yearAndMonth_text{
+    text-align: left;
+    margin-left: 21px;
+}
+.yearAndMonth_btn{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+#calender_grid{
+    width: 400px;
+    height: 330px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin: 0 auto;
+    background: rgb(38, 36, 45);
+}
+.dayofweek, .date{
+    margin: 3px;
+}
+.dayofweek{
+    display: inline-block;
+    color: white;
+}
+.dayofweek{
+    font-size: 15px;
+}
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid rgb(38, 36, 45);
+    overflow: hidden;
+}
+.date-active{
+    background-color: rgb(60, 60, 229);
+    border: rgb(60, 60, 229);
+}
+#date-active-text{
+    width: 96%;
+    height: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(60, 60, 229);
+    overflow: hidden;
+}
+.date-other{
+    font-weight: lighter;
+    color: rgb(88, 82, 82);
+}
+.date-selected{
+    border: 3px solid rgb(60, 60, 229);
+}
+.box-active-unselected {
+    background-clip: border-box;
+}
+.date:hover{
+    border: 3px solid rgb(193, 195, 219);
+}
+.date-selected:hover{
+    border: 3px solid rgba(60, 60, 229, 0.814) !important;
+}
+.date-selected #date-active-text{
+    border: 3px solid black;
+}
+button:focus {
+    outline: none;
+}

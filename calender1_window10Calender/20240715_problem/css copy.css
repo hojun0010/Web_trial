@@ -1,0 +1,90 @@
+* { 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+}
+#timeAndToday, #calender{
+/* #timeAndToday{ */
+    padding: 20px;
+}
+#timeAndToday{
+    width: 400px;
+    margin: 0 auto;
+    background: rgb(38, 36, 45);
+    border-bottom: 1px solid rgb(105, 105, 105);
+}
+#time, #today{
+    text-align: left;;
+}
+#time{
+    margin: 0 auto;
+    font-size: 50px;
+}
+#today{
+    margin: 0 auto;
+    color: cadetblue;
+}
+#calender{
+    display: inline;
+    width: 400px;
+    height: 350px;
+    background-color: aquamarine;
+}
+#yearAndMonth{
+    width: 400px;
+    height: 20px;
+    font-size: 15px;
+    display: flex;
+    align-items: cender;
+    justify-content: center;
+    overflow: hidden;
+}
+#calender_grid{
+    width: 400px;
+    height: 330px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin: 0 auto;
+    background: rgb(38, 36, 45);
+}
+.dayofweek, .date{
+    margin: 1px;
+}
+.dayofweek{
+    display: inline-block;
+    color: white;
+}
+.dayofweek{
+    font-size: 15px;
+}
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid rgb(38, 36, 45);
+    overflow: hidden;
+}
+.date-active{
+    background-color: rgb(60, 60, 229);
+    border: rgb(60, 60, 229);
+}
+.date-other{
+    font-weight: lighter;
+    color: rgb(88, 82, 82);
+}
+.date-selected{
+    border: 3px solid rgb(60, 60, 229);
+}
+.date:hover{
+    border: 3px solid rgb(193, 195, 219);
+}   
+.date-selected:hover{
+    border: 3px solid rgba(60, 60, 229, 0.81);
+}
+
+button:focus {
+    outline: none;
+}

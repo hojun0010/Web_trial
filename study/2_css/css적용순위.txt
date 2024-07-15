@@ -1,0 +1,4 @@
+!important >>> inline >>> id선택자 >>> class명 >>> HTML 태그명 >>> DOM구조의 상위 상속
+
+순서대로 적용 순위가 발생한다.
+출처: https://blinders.tistory.com/87 [글쓰는 개발자:티스토리]
