@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+body > *{
+    background-color: aquamarine;
+}
+header{
+    display: flex;
+    flex-direction: row;
+}
+header > {
+    flex : 1 1 auto;
+}
+#main_icon{
+    width: 300px;
+    height: 88px;
+    background-color: bisque;
+    margin-left: 200px;
+}
+#main_menu{
+    list-style-type: none;
+    flex: none;
+    margin-left:auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+}
+#account_menu{
+    text-align: end;
+    font-size: 11px;
+    flex: 0 0 auto;
+    margin-bottom: auto;
+    margin-top: 10px;
+}
+#account_menu > a{
+    margin: 6px;
+}
+#page_menu li{
+    font-size: 14px;
+    flex: none;
+    margin-top: auto;
+}
+#page_menu ul li{
+    margin: auto 20px 15px 20px;
+}
+
+header li{
+    display: inline-block;
+}
